@@ -23,7 +23,7 @@ export const AuthProvider=({children})=>{
     const token=Cookies.get('token')
     useEffect(()=>{
         async function fetchuser() {
-              const studentdata =  await axios.get("/api/student/allstudent",{headers:{Authorization:`Bearer ${token}`,
+              const studentdata =  await axios.get("https://tutionbackend.onrender.com/student/allstudent",{headers:{Authorization:`Bearer ${token}`,
 }}) 
  setAllStudent(studentdata.data);
         }

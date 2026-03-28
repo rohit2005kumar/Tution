@@ -14,7 +14,7 @@ const Payment = () => {
     try {
       const token = Cookies.get('token');
       const response = await axios.post(
-        '/api/student/payment',
+        'https://tutionbackend.onrender.com/student/payment',
         { name, fathername, amount, month },
         {
           headers: {

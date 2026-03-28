@@ -13,7 +13,7 @@ const Login = () => {
   const formSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/api/user/login', { username, password });
+      const res = await axios.post('https://tutionbackend.onrender.com/user/login', { username, password });
       login(username);
       nav('/');
       setPassword('');

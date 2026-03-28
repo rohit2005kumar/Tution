@@ -17,7 +17,7 @@ const AddStudnet = () => {
     try {
       const token = Cookies.get('token');
       const res = await axios.post(
-        '/api/student/add',
+        'https://tutionbackend.onrender.com/student/add',
         { name, fathername, address, mobile },
         {
           headers: {

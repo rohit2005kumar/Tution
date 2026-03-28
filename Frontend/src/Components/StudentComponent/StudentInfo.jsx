@@ -14,12 +14,12 @@ const StudentInfo = () => {
   const token=Cookies.get('token')
   const fetchdata=async()=>{
    try {
-     const response=await axios.get(`/api/student/${id}`,{
+     const response=await axios.get(`https://tutionbackend.onrender.com/student/${id}`,{
       headers:{
         Authorization:`Bearer ${token}`
       }
     })
-    const paymentres=await axios.get(`/api/student/${id}/allpayment`,{
+    const paymentres=await axios.get(`https://tutionbackend.onrender.com/student/${id}/allpayment`,{
       headers:{
         Authorization:`Bearer ${token}`
       }

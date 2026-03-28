@@ -17,7 +17,7 @@ const Navbar = () => {
     {
       if(!search)return toast("enter a valid name")
     }
-    const response = await axios.post('/api/student/search', { search },
+    const response = await axios.post('https://tutionbackend.onrender.com/student/search', { search },
       {
         headers: {
           Authorization: `Bearer ${token}`
