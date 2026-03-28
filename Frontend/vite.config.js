@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(),tailwindcss()],
   server:{
     proxy:{
-      '/api':{target:'https://tuitionbackend-br4x.onrender.com',
+      '/api':{target:'https://tutionbackend.onrender.com',
         changeOrigin:true,
         rewrite: (path) => path.replace(/^\/api/, ""), 
 
