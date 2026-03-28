@@ -1,5 +1,6 @@
 import express from 'express'
 import 'dotenv/config'
+import cors from 'cors'
 import connectToDb from './controllers/dbConnection.js'
 import userRouter from './router/authentication.js'
 import studentrouter from './router/student.js'
@@ -7,6 +8,7 @@ import cookieParser from 'cookie-parser'
 import checkUserIsLoginOrNot from './middleware/auth.js'
 const app=express()
 const PORT= process.env.PORT|| 1000
+app.use(cors())
  app.listen(PORT,()=>{
     console.log(`port listening onthe port number${PORT}`)
  })
