@@ -8,7 +8,12 @@ import cookieParser from 'cookie-parser'
 import checkUserIsLoginOrNot from './middleware/auth.js'
 const app=express()
 const PORT= process.env.PORT|| 1000
-app.use(cors())
+app.use(cors(
+   {
+      origin:"https://khushbootuition.onrender.com",
+      credentials:true
+   }
+))
  app.listen(PORT,()=>{
     console.log(`port listening onthe port number${PORT}`)
  })

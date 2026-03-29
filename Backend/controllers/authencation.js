@@ -30,7 +30,12 @@ const login = async (req, res) => {
      const isMatch= await passwordComparing(password,curruser.password);
      if(isMatch){
        const token =jwt.sign({"username":username,}, process.env.JWTSECRETKEY,{expiresIn:'1h'});
-       res.cookie("token",token,)
+       res.cookie("token",token, {
+         httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "strict"
+
+       })
        return res.send("login successfully")
      }
      res.send("wrong password credentials");
