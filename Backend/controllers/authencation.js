@@ -36,7 +36,7 @@ const login = async (req, res) => {
         sameSite: "none"
 
        })
-       return res.send("login successfully")
+       return res.send("login successfully",token)
      }
      res.send("wrong password credentials");
    } catch (error) {

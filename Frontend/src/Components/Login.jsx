@@ -14,6 +14,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await axios.post('https://tutionbackend.onrender.com/user/login', { username, password },{ withCredentials: true });
+      console.log(res)
       login(username);
       nav('/');
       setPassword('');
