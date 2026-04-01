@@ -10,7 +10,7 @@ const app=express()
 const PORT= process.env.PORT|| 1000
 app.use(cors(
    {
-      origin:"https://khushbootuition.onrender.com",
+      origin:["https://khushbootuition.onrender.com","http://localhost:5173"],
       credentials:true
    }
 ))
@@ -31,8 +31,5 @@ app.use(cors(
  app.use('/user',userRouter);
 app.use(checkUserIsLoginOrNot)
  app.use('/student',studentrouter)
- app.get('/',(req,res)=>{
-  
-    res.send("hello")
- })
+
 // console.log(process.env.PORT)
