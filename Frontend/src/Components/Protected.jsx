@@ -6,6 +6,7 @@ import { Navigate } from 'react-router-dom';
 const Protected = ({children}) => {
     // const {login,logout,user}=useAuth();
     const token=Cookies.get("token");
+    // console.log(token)
     
     
     if(!token){

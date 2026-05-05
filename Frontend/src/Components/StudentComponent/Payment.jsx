@@ -14,7 +14,7 @@ const Payment = () => {
     try {
       const token = Cookies.get('token');
       const response = await axios.post(
-        'https://tutionbackend.onrender.com/student/payment',
+        '/api/student/payment',
         { name, fathername, amount, month },
         {
           headers: {
@@ -33,9 +33,9 @@ const Payment = () => {
   };
 
   return (
-    <div className="min-h-screen w-screen flex justify-center items-center bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 p-4">
+    <div className="min-h-screen w-screen flex justify-center items-center  p-4">
       <div className="flex flex-col justify-center items-center bg-white rounded-2xl shadow-xl w-full max-w-lg p-8 sm:p-12">
-        <span className="font-bold text-2xl sm:text-4xl text-red-500 text-center mb-6">
+        <span className="font-bold text-2xl sm:text-4xl bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent  text-center mb-6">
           Accept Payment
         </span>
         <form
@@ -77,7 +77,7 @@ const Payment = () => {
 
           <button
             type="submit"
-            className="bg-red-500 hover:bg-red-600 transition text-white font-semibold rounded-lg h-12 w-full"
+            className="bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500  transition text-white font-semibold rounded-lg h-12 w-full"
           >
             Accept
           </button>

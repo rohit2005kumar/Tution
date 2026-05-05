@@ -1,9 +1,13 @@
+
 const StudentCard = ({ student,onclickcustom }) => {
   return (
-    <div  onClick={onclickcustom} className="bg-linear-to-r from-green-400 via-blue-500 to-purple-600 text-white rounded-xl shadow-lg p-6 mb-4">
-      <h3 className="text-xl font-bold mb-2">Student Info</h3>
+    <div  onClick={onclickcustom} className=" bg-gray-100 transition-transform duration-300 ease-in-out hover:scale-110  flex flex-col justify-center items-center px-4 py-2 rounded-xl shadow-lg  mb-4">
+      <div>
+        <img src={student.image} alt="images" className="rounded-full h-30 "/>
+      </div>
+      {/* <h3 className="text-xl font-bold mb-2">Student Info</h3> */}
       <p className="text-lg">
-        <span className="font-semibold">Name:</span> {student.name}
+        <span className="font-bold text-gray-500 hover:text-black text-xl"> {student.name}</span> 
       </p>
     </div>
   );

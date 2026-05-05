@@ -39,11 +39,13 @@ const StudentInfoCard = ({ studentInfo }) => {
 
   return (
     <div className="w-full sm:w-lg flex justify-center items-center p-4">
-      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start border rounded-2xl shadow-lg bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 text-white w-full max-w-3xl p-6 relative">
-        
+      <div className=" flex  justify-center items-center flex-col  rounded-2xl shadow-2xl bg-gray-100 w-full max-w-3xl p-6 relative">
+        <div className='mb-4'>
+          <img src={studentInfo.image} alt="img" className='h-40 rounded-full' />
+        </div>
         {/* Student Info */}
         <div className="flex-1 w-full">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center sm:text-left">
+          <h2 className="text-2xl underline sm:text-3xl font-bold mb-4 text-center sm:text-left">
             Student Details
           </h2>
           <p className="text-lg mb-2">
@@ -61,10 +63,10 @@ const StudentInfoCard = ({ studentInfo }) => {
         </div>
 
         {/* 3-dot menu */}
-        <div className="absolute top-4 right-4">
+        <div className="absolute top-2 right-4">
           <button
             onClick={() => setShowMenu(!showMenu)}
-            className="text-white text-2xl font-bold"
+            className="text-black text-2xl font-bold"
           >
             ⋮
           </button>

@@ -1,4 +1,4 @@
-import e from "express";
+import { upload,uploadImage } from "../service/cloudinary.js";
 import Payment from "../models/payment.js";
 import Student from "../models/studentModel.js";
 const allstudent=async (req,res) => {
@@ -7,12 +7,17 @@ const allstudent=async (req,res) => {
     
 }
 const addStudent=async(req,res)=>{
+   
  try {
        const{name,fathername,mobile,address}=req.body;
     // const existStudnet=await Student.findOne({$and:[{name},{fathername}]});
     const existStudnet=await Student.findOne({name,fathername});
     if(existStudnet){ return res.send('Student already exist');}
+   
     const newStudent= new Student({name,fathername,mobile,address});
+     const imageurl=await uploadImage(req.file.buffer)
+     // saving image url into db
+     newStudent.image=imageurl.secure_url
     const savedata=await newStudent.save();
     res.send("student Added successfully",savedata);
  } catch (error) {
@@ -30,7 +35,7 @@ const deleteStudent=async(req,res)=>{
     
         
     } catch (error) {
-        console.log(error)
+        console.log(error.message)
         res.send(error.message)
     }
 }

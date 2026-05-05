@@ -9,7 +9,7 @@ import { toast } from "react-toastify"
         
     const token=Cookies.get('token')
     console.log(data)
-    const response=await axios.patch(`https://tutionbackend.onrender.com/student/update/${id}`,{data},{
+    const response=await axios.patch(`/api/student/update/${id}`,{data},{
         headers:{
             Authorization:`Bearer ${token}`
         }
@@ -28,9 +28,11 @@ nav('/studentinfo/')
     const token=Cookies.get('token')
 
   try {  
-     const response= await axios.delete(`https://tutionbackend.onrender.com/student/payment/${id}`,{
+     const response= await axios.delete(`/api/student/payment/${id}`,{
         headers:{
-            Authorization:`Bearer ${token}`
+            Authorization:`Bearer ${token}`,
+            "Content-Type": "multipart/form-data"
+            
         }
     })
     toast(response.data)
